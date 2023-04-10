@@ -1,0 +1,34 @@
+{
+  "name": "hardhat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test test/factoryNFT.js",
+    "fund": "hardhat run scripts/fund.js --network localhost",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "mint": "hardhat run scripts/mint.js --network localhost",
+    "pinnig": "hardhat run scripts/pinning.js --network shiden",
+    "verify": "hardhat verify --contract contracts/factoryNFT.sol:FactoryNFT --network shiden 0x6d4965CB654B039EfF3cC86400932338790C2126"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.6",
+    "hardhat": "^2.6.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@openzeppelin/hardhat-upgrades": "^1.10.0",
+    "@polkadot/api": "^10.2.2",
+    "@polkadot/keyring": "^11.1.3",
+    "@polkadot/util-crypto": "^11.1.3",
+    "canvas": "^2.11.2",
+    "dotenv": "^16.0.3",
+    "ipfs-http-client": "^60.0.0"
+  }
+}
