@@ -1,5 +1,7 @@
 # EVM NFT Contract POC  
 
+<img align="right" width="100" height="100" src="https://user-images.githubusercontent.com/2903505/231206677-c6ceea47-85d1-46c1-8740-5ab8e5ff5799.png">
+
 This project uses Hardhat to achieve a POC collection of NFTs on Shiden with the metadata and image stored on Crust.
 
 First minted NFT of Shiden: [ShidenCrust Singulars #1](https://tofunft.com/nft/shiden/0x6d4965CB654B039EfF3cC86400932338790C2126/1)
@@ -91,6 +93,7 @@ canvas
 dotenv
 ipfs-http-client
 ```
+
 
 ## License
 
