@@ -2,7 +2,7 @@ const { expect } = require("chai");
 
 describe("Mint Function", function () {
   it("The contract as able to mint a function", async function () {
-    const metadata = "https://opensea-creatures-api.herokuapp.com/api/creature/1"
+    const metadata = "https://ipfs.io/ipfs/QmPpzZ2LTfLpH1tWCS5DFnK7fWs2WB4AwqzWqaBknyye7u/1.json"
 
     const FactoryContract = await ethers.getContractFactory("FactoryNFT");
 

@@ -1,6 +1,6 @@
 async function main() {
   const { create } = await import('ipfs-http-client')
-  const fs = require('fs');
+  const fs = require('fs/promises');
 
   const [signer] = await ethers.getSigners();
   const tokenId = await getNextTokenId(signer);
@@ -46,14 +46,15 @@ async function main() {
     content: await image()
   }
 
-  fs.writeFileSync('tmp/' + tokenId + '.png', imageFileDetails.content);
+  // not needed for any scripts, just for debugging
+  await fs.writeFile('tmp/' + tokenId + '.png', imageFileDetails.content);
 
   const cidImage = await ipfs.add(imageFileDetails, options);
-  metadata.image = "ipfs://" + cidImage.cid.toString() + "/" + imageFileDetails.path;
+  metadata.image = `ipfs://${cidImage.cid.toString()}/${imageFileDetails.path}`;
   console.log("cidImage:", cidImage);
 
   // 3. Get file status from ipfs
-  const fileStatImage = await ipfs.files.stat("/ipfs/" + cidImage.cid.toString() + "/" + imageFileDetails.path);
+  const fileStatImage = await ipfs.files.stat(`/ipfs/${cidImage.cid.toString()}/${imageFileDetails.path}`);
   console.log("type:", fileStatImage.type);
 
   const metadataFileDetails = {
@@ -62,12 +63,11 @@ async function main() {
   }
 
   const cidMetadata = await ipfs.add(metadataFileDetails, options);
-  console.log("type:", cidMetadata.type);
+  console.log("cidMetadata:", cidMetadata);
 
   // 3. Get file status from ipfs
-  const metadatafileStat = await ipfs.files.stat("/ipfs/" + cidMetadata.cid.toString() + "/" + metadataFileDetails.path);
-  console.log("metadatafileStat:", metadatafileStat);
-
+  const metadatafileStat = await ipfs.files.stat(`/ipfs/${cidMetadata.cid.toString()}/${metadataFileDetails.path}`);
+  console.log("type:", metadatafileStat.type);
 }
 
 async function image() {
