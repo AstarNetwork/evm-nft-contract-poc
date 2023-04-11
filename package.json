@@ -10,7 +10,7 @@
     "deploy": "hardhat run scripts/deploy.js --network localhost",
     "mint": "hardhat run scripts/mint.js --network localhost",
     "ipfs": "hardhat run scripts/ipfs.js --network shiden",
-    "pinnig": "hardhat run scripts/pinning.js --network shiden",
+    "pinnig": "hardhat run scripts/pin.js --network shiden",
     "verify": "hardhat verify --contract contracts/factoryNFT.sol:FactoryNFT --network shiden 0x6d4965CB654B039EfF3cC86400932338790C2126"
   },
   "devDependencies": {

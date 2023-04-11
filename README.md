@@ -56,7 +56,7 @@ yarn ipfs
 To pin the image and metadata on the Shiden network, run:
 
 ```sh
-yarn pinning
+yarn pin
 ```
 
 To mint new tokens, run:
