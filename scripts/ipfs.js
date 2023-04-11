@@ -54,7 +54,7 @@ async function main() {
 
   // 3. Get file status from ipfs
   const fileStatImage = await ipfs.files.stat("/ipfs/" + cidImage.cid.toString() + "/" + imageFileDetails.path);
-  console.log("fileStatImage:", fileStatImage);
+  console.log("type:", fileStatImage.type);
 
   const metadataFileDetails = {
     path: tokenId + ".json",
@@ -62,7 +62,7 @@ async function main() {
   }
 
   const cidMetadata = await ipfs.add(metadataFileDetails, options);
-  console.log("cidMetadata:", cidMetadata);
+  console.log("type:", cidMetadata.type);
 
   // 3. Get file status from ipfs
   const metadatafileStat = await ipfs.files.stat("/ipfs/" + cidMetadata.cid.toString() + "/" + metadataFileDetails.path);
