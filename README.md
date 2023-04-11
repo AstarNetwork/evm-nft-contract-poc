@@ -93,7 +93,6 @@ dotenv
 ipfs-http-client
 ```
 
-
 ## License
 
 This project is licensed under the MIT license.
