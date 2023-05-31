@@ -10,7 +10,7 @@ async function main() {
 
   await factoryNFT.deployed(); // waiting for the contract to be deployed
 
-  console.log("FactoryNFT deployed to:", factoryNFT.address); // Returning the contract address on the rinkeby
+  console.log("FactoryNFT deployed to:", factoryNFT.address); // Returning the contract address
 }
 
 main()

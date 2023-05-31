@@ -12,7 +12,7 @@ async function main() {
   // We connect to the Contract using a Provider, so we will only
   // have read-only access to the Contract
   let contract = new ethers.Contract(contractAddress, abi, signer);
-  let currentValue = contract.tokenURI(1854);
+  let currentValue = contract.tokenURI(1);
 
   currentValue.then(console.log)
 
